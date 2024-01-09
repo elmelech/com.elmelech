@@ -12,9 +12,14 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons'
 import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
+// import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoGOIMOD from '@/images/logos/goimod.jpeg'
+import logoGOIMOFA from '@/images/logos/goimofa.jpeg'
+import logoAIRPLANE from '@/images/logos/airplane.svg'
+import logoELAL from '@/images/logos/elal.jpeg'
+import logoIDF from '@/images/logos/idf.jpeg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -104,7 +109,7 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" target="_blank" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -187,35 +192,42 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Government of Israel - Ministry of Defense',
+      title: 'Project Manager',
+      logo: logoGOIMOD,
+      start: '2020',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'Government of Israel - Ministry of Foreign Affairs of Israel',
+      title: 'Security Professional',
+      logo: logoGOIMOFA,
+      start: '2019',
+      end: '2020',
+    },
+    {
+      company: 'Travel Break',
+      title: 'Australia & Fiji',
+      logo: logoAIRPLANE,
+      start: '2018',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'EL-AL Israel Airlines',
+      title: 'Flight Attendant',
+      logo: logoELAL,
+      start: '2016',
+      end: '2018',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Israel Defense Forces',
+      title: 'Combat Search and Rescue Staff Sgt.',
+      logo: logoIDF,
+      start: '2012',
+      end: '2015',
     },
   ]
 
@@ -230,10 +242,10 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      {/* <Button href="#" variant="secondary" className="group mt-6 w-full">
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      </Button> */}
     </div>
   )
 }
@@ -273,32 +285,31 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Software engineer, student, and amateur ukulele player.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            Hi! My name is Roey Elmelech, and I am a full-time student and a full-time worker, based in New York
+            City. I am currently venturing into the field of computer science, and am looking for my first
+            opportunity to show the world what I am capable of.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
+            {/* <SocialLink
               href="https://twitter.com"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
-            />
-            <SocialLink
+            /> */}
+            {/* <SocialLink
               href="https://instagram.com"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
-            />
+            /> */}
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/elmelech"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/elmelech/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
