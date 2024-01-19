@@ -5,9 +5,8 @@ import remarkGfm from 'remark-gfm'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  reactStrictMode: true,
- // Add basePath
-  basePath: '/src',
+  // reactStrictMode: true,
+  // basePath: '/',
 }
 
 const withMDX = nextMDX({
