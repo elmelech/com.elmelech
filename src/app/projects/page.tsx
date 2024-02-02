@@ -14,7 +14,7 @@ const projects = [
     name: 'Travel Planner Platform',
     description:
       'Built a travel planning platform using a MACH architecture on AWS supported by Lambda, API Gateway, RESTful APIs, and OAuth 2.0 authorization for secure access and support that enables users to create flight and hotel itineraries, and access real-time weather forecasting.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+    link: { href: '#', label: 'github.com' },
     logo: logoPlanetaria,
   },
   {
