@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "deploy": "npx sst deploy --stage prod",
+    "remove": "npx sst remove --stage prod",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -38,6 +40,9 @@
     "eslint-config-next": "13.4.16",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.5.2",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.0",
+    "aws-cdk-lib": "2.95.1",
+    "constructs": "10.2.69",
+    "sst": "2.26.8"
   }
 }

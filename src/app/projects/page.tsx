@@ -11,9 +11,9 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Travel Planner Platform',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
+      'Built a travel planning platform using a MACH architecture on AWS supported by Lambda, API Gateway, RESTful APIs, and OAuth 2.0 authorization for secure access and support that enables users to create flight and hotel itineraries, and access real-time weather forecasting.',
     link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
     logo: logoPlanetaria,
   },
