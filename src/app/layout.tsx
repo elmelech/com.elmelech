@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Roey Elmelech',
     default:
-      'Roey Elmelech - Software designer, founder, and amateur astronaut',
+      'Roey Elmelech - Software designer, founder, and amateur ukulele player',
   },
   description:
-    'I’m Roey, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
+    'Hi! My name is Roey Elmelech and I love to come up with different solutions to a single problem.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
