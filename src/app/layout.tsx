@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Roey Elmelech',
     default:
-      'Roey Elmelech - Software designer, founder, and amateur ukulele player',
+      'Roey Elmelech',
   },
   description:
-    'Hi! My name is Roey Elmelech and I love to come up with different solutions to a single problem.',
+    'Hello! My name is Roey Elmelech, and I am a New York based senior Computer Science major at Columbia University in New York, specializing in intelligent systems. I am passionate about leveraging my technical expertise and problem-solving skills to contribute to innovative software solutions. As I approach the completion of my degree, I am eager to explore opportunities where I can apply my knowledge in real-world applications and further develop my skills as a software engineer.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
