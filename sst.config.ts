@@ -1,3 +1,4 @@
+import { HostedZone } from "aws-cdk-lib/aws-route53";
 import { SSTConfig } from "sst";
 import { NextjsSite } from "sst/constructs";
 
@@ -10,7 +11,13 @@ export default {
   },
   stacks(app) {
     app.stack(function Site({ stack }) {
-      const site = new NextjsSite(stack, "site");
+      const site = new NextjsSite(stack, "site", {
+        customDomain: {
+          hostedZone: "elmelech.com",
+          domainName: "elmelech.com",
+          domainAlias: "www.elmelech.com",
+        },
+      });
 
       stack.addOutputs({
         SiteUrl: site.url,
