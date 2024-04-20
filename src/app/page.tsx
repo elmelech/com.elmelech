@@ -156,13 +156,14 @@ export default async function Home() {
   return (
     <>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Software engineer, student, dedicated employee, and amateur ukulele player.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Hello! My name is Roey Elmelech, and I am a New York based senior Computer Science major at Columbia University in New York, specializing in intelligent systems. I am passionate about leveraging my technical expertise and problem-solving skills to contribute to innovative software solutions. As I approach the completion of my degree, I am eager to explore opportunities where I can apply my knowledge in real-world applications and further develop my skills as a software engineer.
           </p>
+          <div className="border-t border-zinc-100 dark:border-zinc-700/40"></div>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
               href="https://twitter.com"
