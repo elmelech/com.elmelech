@@ -71,9 +71,9 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      {/* <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-      </div>
+      </div> */}
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
@@ -122,17 +122,24 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Government of Israel - Ministry of Defense',
-      title: 'Project Manager',
+      company: 'Government of Israel',
+      title: 'Senior Analyst',
       logo: logoGOIMOD,
-      start: '2020',
+      start: '2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Government of Israel - Ministry of Foreign Affairs of Israel',
+      company: 'Government of Israel',
+      title: 'Project Manager',
+      logo: logoGOIMOFA,
+      start: '2020',
+      end: '2022',
+    },
+    {
+      company: 'Government of Israel',
       title: 'Security Professional',
       logo: logoGOIMOFA,
       start: '2019',
@@ -194,7 +201,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Hi! My name is Roey Elmelech and I love to come up with different solutions to a single problem.',
+    'Happy to meet you, and allow me to intorudce myself.',
 }
 
 export default function About() {
@@ -213,14 +220,14 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Hi! My name is Roey Elmelech and I love to come up with different solutions to a single problem.
+            Happy to meet you, and allow me to intorudce myself.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              As a full-time computer science student at Columbia University and a full-time senior analyst at the GOI, I take pride in my ability to combine technical skills, innovative thinking, leadership, and creativity. Despite my recent entry into the tech industry, my diverse professional background has equipped me with skills like innovation, teamwork, creative problem-solving, resourcefulness, and adaptability. Juggling a full-time role as a Senior Analyst and being a full-time student allowed me to apply acquired tools in various contexts. I approach my work with a consistent out-of-the-box thinking mentality.
+              As a full-time computer science student at Columbia University and a full-time Senior Analyst at the GOI, I take pride in my ability to combine technical skills, innovative thinking, leadership, and creativity. My diverse professional background has equipped me with skills like innovation, teamwork, creative problem-solving, resourcefulness, and adaptability. Juggling a full-time role as a Senior Analyst and being a full-time student allowed me to apply acquired tools in various contexts. I approach my work with a consistent out-of-the-box thinking mentality.
             </p>
             <p>
-              My unconventional professional path, encompassing roles such as Staff Sergeant, Flight Attendant, Security Officer, and my current position as a Senior Governance Analyst for the Government of Israel - Ministry of Defense, has endowed me with a diverse skill set. Leadership and resilience were cultivated during my military service, communication and collaboration skills were honed as a Flight Attendant, and critical thinking and risk management abilities were refined during my tenure as a Security Officer in a foreign country. My current role has further solidified my managerial and analytical skills, fostering innovative thinking and strategic planning.
+              My unconventional professional path, encompassing roles such as Staff Sergeant, Flight Attendant, Security Officer, and my current position as a Senior Analyst has endowed me with a diverse skill set. Leadership and resilience were cultivated during my military service, communication and collaboration skills were honed as a Flight Attendant, and critical thinking and risk management abilities were refined during my tenure as a Security Officer in a foreign country. My current role has further solidified my managerial and analytical skills, fostering innovative thinking and strategic planning.
             </p>
             <p>
               I am passionate about learning new technologies and applying them to real-world problems, I value collaborative excellence, efficiency, innovation, and challenges, and I seek opportunities to grow and improve as a professional and as a person.

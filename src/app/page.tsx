@@ -158,12 +158,11 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, student, and amateur ukulele player.
+            Software engineer, student, dedicated employee, and amateur ukulele player.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hi! My name is Roey Elmelech, and I am a full-time student and a full-time worker, based in New York
-            City. I am currently venturing into the field of computer science, and am looking for my first
-            opportunity to show the world what I am capable of.
+            Hi! My name is Roey Elmelech, and I am a New York based senior student at Columbia University, majoring in Computer Science with a focus in intelligent systems. I am currently venturing into the field of computer science, and am looking for my first
+            opportunity to bring my skills to their full potential.
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
@@ -189,7 +188,7 @@ export default async function Home() {
           </div>
         </div>
       </Container>
-      <Photos />
+      {/* <Photos /> */}
       
       {/* <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
