@@ -60,13 +60,13 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'I love seeing the different turns my projects take before they are fully ready.',
+  description: 'Where My Code Adventures Lead.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="I love seeing the different turns my projects take before they are fully ready."
+      title="Where My Code Adventures Lead."
       intro="My academic projects have ranged from developing applications using machine
       learning libraries like sklearn and keras, to creating robust database systems with SQL, MongoDB, and Neo4j. These experiences have prepared me to effectively collaborate with talented teams to design, develop, and launch impactful digital products."
     >

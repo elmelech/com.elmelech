@@ -161,8 +161,7 @@ export default async function Home() {
             Software engineer, student, dedicated employee, and amateur ukulele player.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hi! My name is Roey Elmelech, and I am a New York based senior student at Columbia University, majoring in Computer Science with a focus in intelligent systems. I am currently venturing into the field of computer science, and am looking for my first
-            opportunity to bring my skills to their full potential.
+            Hello! My name is Roey Elmelech, and I am a New York based senior Computer Science major at Columbia University in New York, specializing in intelligent systems. I am passionate about leveraging my technical expertise and problem-solving skills to contribute to innovative software solutions. As I approach the completion of my degree, I am eager to explore opportunities where I can apply my knowledge in real-world applications and further develop my skills as a software engineer.
           </p>
           <div className="mt-6 flex gap-6">
             {/* <SocialLink
