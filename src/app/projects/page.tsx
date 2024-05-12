@@ -13,21 +13,21 @@ const projects = [
   {
     name: 'Travel Planner Platform',
     description:
-      'Built a travel planning platform using a MACH architecture on AWS supported by Lambda, API Gateway, RESTful APIs, and OAuth 2.0 authorization for secure access and support that enables users to create flight and hotel itineraries, and access real-time weather forecasting.',
+      'Contributed to the development of a travel planning platform using MACH architecture on AWS, integrating Lambda, API Gateway, and OAuth 2.0 for robust security. Engineered features enabling users to create flight and hotel itineraries, and access real-time weather forecasts.',
     link: { href: '#', label: 'github.com' },
     logo: logoPlanetaria,
   },
   {
     name: 'Dutch-Blitz Guide',
     description:
-      'Created an app to teach users how to play "Dutch Blitz" via an interactive platform. Front-end developed with Angular, implementing server-side rendering using AWS Lambda',
-    link: { href: '#', label: 'github.com' },
+      'Collaborated with a team of three engineers to develop an interactive platform designed to teach users how to play "Dutch Blitz". Front-end developed with Angular, implementing server-side rendering using AWS Lambda',
+    link: { href: 'https://yellblitz.com/', label: 'yellblitz.com' },
     logo: logoOpenShuttle,
   },
   {
     name: 'Sign Language Classifier',
     description:
-      'Developed a sign language classifier in Python that conducts data preprocessing using Keras sequential model.',
+      'Developed a sign language classifier in Python that conducts data preprocessing using Keras sequential model. Demonstrated expertise in image classification and practical application of convolutional neural networks',
     link: { href: '#', label: 'github.com' },
     logo: logoAnimaginary,
   },
@@ -85,13 +85,28 @@ export default function Projects() {
               />
             </div> */}
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link>{project.name}</Card.Link>
+            {project.link && project.link.href && project.link.href !== '#' ? (
+              <Card.Link href={project.link.href}>
+                {project.name}
+              </Card.Link>
+            ) : (
+              <Card.noLink>{project.name}</Card.noLink>
+            )}
+
             </h2>
             <Card.Description>{project.description}</Card.Description>
             {/* <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
               <span className="ml-2">{project.link.label}</span>
             </p> */}
+            {project.link && project.link.href !== '#' && (
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <a href={project.link.href} className="ml-2">
+                  {project.link.label}
+                </a>
+              </p>
+            )}
           </Card>
         ))}
       </ul>
