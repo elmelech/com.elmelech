@@ -1,0 +1,102 @@
+name: Deploy SST Application
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Install pnpm & dependencies
+      uses: pnpm/action-setup@v3
+      with:
+        version: 8
+        run_install: false
+
+    - name: Get pnpm store directory
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+    - uses: actions/cache@v4
+      name: Setup pnpm cache
+      with:
+        path: ${{ env.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Cache project SST directory
+      uses: actions/cache@v4
+      with:
+        path: .sst
+        key: ${{ runner.os }}-project-sst-cache-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-project-sst-cache-
+
+    - name: Cache system root SST directory
+      uses: actions/cache@v4
+      with:
+        path: ~/.sst
+        key: ${{ runner.os }}-system-root-sst-cache-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-system-root-sst-cache-
+
+    - name: Cache system root SST config directory
+      uses: actions/cache@v4
+      with:
+        path: /home/runner/.config/sst
+        key: ${{ runner.os }}-system-root-sst-config-cache-${{ github.run_id }}
+        restore-keys: |
+          ${{ runner.os }}-system-root-sst-config-cache-
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Install SST CLI
+      run: curl -fsSL https://ion.sst.dev/install | bash
+
+    - name: Set up AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Start deployment
+      uses: bobheadxi/deployments@v1
+      id: deployment
+      with:
+        step: start
+        token: ${{ secrets.GITHUB_TOKEN }}
+        env: prod
+
+    - name: Install SST dependencies
+      env:
+        NO_BUN: true
+      run: sst install --stage prod --verbose
+
+    - name: Deploy to production
+      env:
+        NO_BUN: true
+      run: sst deploy --stage prod --verbose
+
+    - name: Update deployment status
+      if: always()
+      uses: bobheadxi/deployments@v1
+      with:
+        step: finish
+        token: ${{ secrets.GITHUB_TOKEN }}
+        status: ${{ job.status }}
+        env: ${{ steps.deployment.outputs.env }}
+        deployment_id: ${{ steps.deployment.outputs.deployment_id }}

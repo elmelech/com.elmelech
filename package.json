@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "deploy": "npx sst deploy --stage prod",
-    "remove": "npx sst remove --stage prod",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "deploy": "npx sst deploy --stage prod",
+    "dev": "sst dev next dev",
+    "lint": "next lint",
+    "remove": "npx sst remove --stage prod",
+    "start": "next start"
   },
-  "browserslist": "defaults, not ie <= 11",
+  "browserslist": "defaults, not ie \u003c= 11",
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "@mapbox/rehype-prism": "^0.9.0",
@@ -33,6 +33,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "^3.0.1",
+    "sst": "ion",
     "tailwindcss": "^3.4.3",
     "typescript": "5.1.6"
   },

@@ -1,27 +1,25 @@
-import { HostedZone } from "aws-cdk-lib/aws-route53";
-import { SSTConfig } from "sst";
-import { NextjsSite } from "sst/constructs";
+/// <reference path="./.sst/platform/config.d.ts" />
 
-export default {
-  config(_input) {
+export default $config({
+  app(input) {
+    if (input.stage !== "prod") throw new Error("Invalid stage");
     return {
       name: "elmelech-website",
-      region: "us-east-1",
+      removal: "remove",
+      home: "aws",
+      providers: {
+        aws: {
+          region: "us-east-1",
+        }
+      }
     };
   },
-  stacks(app) {
-    app.stack(function Site({ stack }) {
-      const site = new NextjsSite(stack, "site", {
-        customDomain: {
-          hostedZone: "elmelech.com",
-          domainName: "elmelech.com",
-          domainAlias: "www.elmelech.com",
-        },
-      });
-
-      stack.addOutputs({
-        SiteUrl: site.url,
-      });
+  async run() {
+    new sst.aws.Nextjs("NextjsSite", {
+      domain: {
+        name: "elmelech.com",
+        aliases: ["www.elmelech.com"],
+      }
     });
   },
-} satisfies SSTConfig;
+});
