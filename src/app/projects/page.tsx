@@ -11,6 +11,13 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 'Workou-what?',
+    description:
+      'Developed an app to assist workout instructors in generating and displaying textual sets of instructions for each class, promoting inclusivity for hearing-impaired participants',
+    link: { href: '#', label: 'github.com' },
+    logo: logoAnimaginary,
+  },
+  {
     name: 'Travel Planner Platform',
     description:
       'Contributed to the development of a travel planning platform using MACH architecture on AWS, integrating Lambda, API Gateway, and OAuth 2.0 for robust security. Engineered features enabling users to create flight and hotel itineraries, and access real-time weather forecasts.',
@@ -85,13 +92,13 @@ export default function Projects() {
               />
             </div> */}
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-            {project.link && project.link.href && project.link.href !== '#' ? (
-              <Card.Link href={project.link.href}>
-                {project.name}
-              </Card.Link>
-            ) : (
-              <Card.noLink>{project.name}</Card.noLink>
-            )}
+              {project.link && project.link.href && project.link.href !== '#' ? (
+                <Card.Link href={project.link.href}>
+                  {project.name}
+                </Card.Link>
+              ) : (
+                <Card.noLink>{project.name}</Card.noLink>
+              )}
 
             </h2>
             <Card.Description>{project.description}</Card.Description>
