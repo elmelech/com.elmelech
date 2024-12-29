@@ -27,7 +27,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XLSFDNVKV"></script>
       <script>
         window.dataLayer = window.dataLayer || [];
