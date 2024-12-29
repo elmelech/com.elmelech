@@ -122,14 +122,21 @@ function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Government of Israel',
-      title: 'Senior Analyst',
+      company: 'Columbia University',
+      title: 'Teaching Assistant  - Cloud Computing',
       logo: logoGOIMOD,
-      start: '2022',
+      start: '2024',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+    },
+    {
+      company: 'Government of Israel',
+      title: 'Senior Analyst',
+      logo: logoGOIMOD,
+      start: '2022',
+      end: '2024',
     },
     {
       company: 'Government of Israel',
